@@ -76,7 +76,7 @@
                 <span class="text-xl opacity-0 group-hover:opacity-100 transition-opacity">←</span>
             </button>
 
-            <button onclick="window.location.href='#driver-login'" class="w-full glass-button p-6 rounded-3xl flex items-center justify-between group">
+            <button onclick="window.location.href='student-login'" class="w-full glass-button p-6 rounded-3xl flex items-center justify-between group">
                 <div class="flex items-center gap-4 text-right">
                     <div class="w-12 h-12 bg-emerald-500/20 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                         🚕
@@ -99,6 +99,21 @@
                 <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
             </div>
         </div>
+        <script>
+    function showStudentLogin() {
+        // إخفاء الصفحة الرئيسية
+        document.getElementById('home-page').classList.add('hidden');
+        // إظهار صفحة الطالب
+        document.getElementById('student-page').classList.remove('hidden');
+    }
+
+    function goBack() {
+        // إظهار الصفحة الرئيسية
+        document.getElementById('home-page').classList.remove('hidden');
+        // إخفاء صفحة الطالب
+        document.getElementById('student-page').classList.add('hidden');
+    }
+</script>
     </div>
 
 </body>
