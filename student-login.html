@@ -100,6 +100,48 @@
         </div>
 
     </div>
+<script type="module">
+  // 1. استيراد المكتبات من جوجل مباشرة
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
+  // 2. إعدادات مشروعك (استبدلها بالبيانات التي ستجدها في Project Settings)
+  const firebaseConfig = {
+    apiKey: "ضع_هنا_الـ_API_KEY_الخاص_بك",
+    authDomain: "top-car-2599b.firebaseapp.com",
+    projectId: "top-car-2599b",
+    storageBucket: "top-car-2599b.appspot.com",
+    messagingSenderId: "123456789",
+    appId: "1:123456789:web:abcdef"
+  };
+
+  // 3. تشغيل Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // 4. دالة التسجيل (عند الضغط على زر دخول الطالب مثلاً للتجربة)
+  const loginBtn = document.querySelector('.btn-blue');
+  
+  loginBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.querySelector('input[type="text"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+
+    if(email && password) {
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            alert("تم إنشاء الحساب بنجاح! الإيميل الآن محفوظ في Firebase");
+            console.log("User:", userCredential.user);
+            // الانتقال لصفحة الداشبورد
+            window.location.href = "driver-dashboard.html"; 
+          })
+          .catch((error) => {
+            alert("خطأ: " + error.message);
+          });
+    } else {
+        alert("يرجى إدخال الإيميل والرمز");
+    }
+  });
+</script>
 </body>
 </html>
