@@ -3,93 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خطوط النخبة | توصيل طالبات</title>
+    <title>TOP car | توصيل الطلاب</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
-        .glass { bg-white/80 backdrop-blur-md; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            /* خلفية متحركة لإظهار تأثير الزجاج */
+            background: linear-gradient(45deg, #0f172a, #1e293b, #334155);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-button {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="p-4">
 
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-pink-100">
-        <div class="max-w-md mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center text-white">✨</div>
-                <span class="font-black text-xl text-pink-600 italic">PinkLine</span>
-            </div>
-            <a href="#join" class="bg-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-pink-200">احجزي الآن</a>
-        </div>
-    </nav>
-
-    <header class="pt-24 pb-12 px-6 text-center bg-gradient-to-b from-pink-50 to-slate-50">
-        <h1 class="text-3xl font-black mb-4 leading-tight">توصيل آمن من باب البيت <br><span class="text-pink-600">إلى باب الكلية</span></h1>
-        <p class="text-slate-500 text-sm mb-8">نظام اشتراكات شهرية مع سائقين موثوقين وسيارات حديثة مكيفة.</p>
+    <div class="max-w-md w-full glass-card rounded-[2.5rem] p-8 text-center text-white relative overflow-hidden">
         
-        <div class="flex justify-center gap-4">
-            <div class="bg-white p-3 rounded-2xl shadow-sm border border-pink-100 flex-1">
-                <span class="block text-xl">🛡️</span>
-                <p class="text-[10px] font-bold text-slate-400">أمان تام</p>
-            </div>
-            <div class="bg-white p-3 rounded-2xl shadow-sm border border-pink-100 flex-1">
-                <span class="block text-xl">⏰</span>
-                <p class="text-[10px] font-bold text-slate-400">التزام بالوقت</p>
-            </div>
-            <div class="bg-white p-3 rounded-2xl shadow-sm border border-pink-100 flex-1">
-                <span class="block text-xl">🚗</span>
-                <p class="text-[10px] font-bold text-slate-400">سيارات حديثة</p>
-            </div>
-        </div>
-    </header>
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
 
-    <main class="max-w-md mx-auto px-6 space-y-6">
-        <h2 class="font-bold text-lg flex items-center gap-2">📍 الخطوط المتوفرة حالياً:</h2>
-        
-        <div class="bg-white rounded-3xl p-5 shadow-xl shadow-slate-200/50 border border-white relative overflow-hidden">
-            <div class="absolute top-0 left-0 bg-green-500 text-white text-[10px] px-3 py-1 rounded-br-xl font-bold">متوفر مقعدين</div>
-            <div class="flex items-center gap-4 mb-4 mt-2">
-                <div class="w-16 h-16 bg-slate-200 rounded-2xl overflow-hidden">
-                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=driver1" alt="driver">
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900">كابتن محمد علي</h3>
-                    <p class="text-xs text-slate-400 font-medium">هيونداي النترا 2023</p>
-                    <div class="flex text-yellow-400 text-[10px] mt-1">⭐⭐⭐⭐⭐</div>
-                </div>
-            </div>
-            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-2">
-                <p><strong>🏠 المناطق:</strong> حي الجامعة، المنصور، اليرموك</p>
-                <p><strong>💰 الاشتراك:</strong> 75,000 د.ع / شهر</p>
-            </div>
-            <button class="w-full mt-4 bg-slate-900 text-white py-3 rounded-xl font-bold text-sm hover:bg-pink-600 transition-all">التواصل مع السائق</button>
+        <div class="mb-8">
+            <h1 class="text-4xl font-black tracking-widest italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                TOP car
+            </h1>
+            <p class="text-gray-400 text-sm mt-2 font-light">مرحباً بك، اختر طريقة الدخول</p>
         </div>
 
-        <section id="join" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
-            <h2 class="font-black text-xl mb-2 italic">سجلي مكانك 📝</h2>
-            <p class="text-xs text-slate-400 mb-6">اتركي معلوماتك وسنتواصل معكِ لتحديد أقرب خط لمنزلك.</p>
+        <div class="space-y-6">
             
-            <form class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold mb-1 mr-2">الاسم الثلاثي</label>
-                    <input type="text" class="w-full p-3 bg-slate-50 rounded-xl border-none focus:ring-2 focus:ring-pink-500 outline-none text-sm">
+            <button onclick="window.location.href='#student-login'" class="w-full glass-button p-6 rounded-3xl flex items-center justify-between group">
+                <div class="flex items-center gap-4 text-right">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        🎓
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">أنا طالبة / طالب</h3>
+                        <p class="text-[10px] text-gray-400 font-light">للبحث عن خطوط وحجز مقعد</p>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold mb-1 mr-2">منطقة السكن (بالضبط)</label>
-                    <input type="text" placeholder="مثلاً: زقاق 12، خلف مول.." class="w-full p-3 bg-slate-50 rounded-xl border-none focus:ring-2 focus:ring-pink-500 outline-none text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold mb-1 mr-2">رقم ولي الأمر</label>
-                    <input type="tel" class="w-full p-3 bg-slate-50 rounded-xl border-none focus:ring-2 focus:ring-pink-500 outline-none text-sm text-left font-mono">
-                </div>
-                <button type="submit" class="w-full bg-pink-500 text-white py-4 rounded-2xl font-black shadow-lg shadow-pink-200 uppercase tracking-wider">إرسال الطلب</button>
-            </form>
-        </section>
-    </main>
+                <span class="text-xl opacity-0 group-hover:opacity-100 transition-opacity">←</span>
+            </button>
 
-    <footer class="mt-12 py-8 border-t border-slate-100 text-center text-[10px] text-slate-400 font-bold uppercase tracking-widest">
-        Safe Ride • University Transport • 2026
-    </footer>
+            <button onclick="window.location.href='#driver-login'" class="w-full glass-button p-6 rounded-3xl flex items-center justify-between group">
+                <div class="flex items-center gap-4 text-right">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        🚕
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">أنا سائق</h3>
+                        <p class="text-[10px] text-gray-400 font-light">لإضافة خطك وإدارة المشتركين</p>
+                    </div>
+                </div>
+                <span class="text-xl opacity-0 group-hover:opacity-100 transition-opacity">←</span>
+            </button>
+
+        </div>
+
+        <div class="mt-12">
+            <p class="text-[10px] text-gray-500 uppercase tracking-[0.2em]">Premium Transportation System</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
